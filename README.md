@@ -23,7 +23,7 @@ it will set all the environment variables, deploy Sylla DB and will deploy the a
 Admin users will be created automatically once the application is started
 To Register and Enroll the users use /register api for the following organization
 
-# Use Postman Collections and Environment file to login and start using the functions (the flow to use postman request is described below)
+# Use Postman Collections and Environment file to login and start using the functions (the flow to use postman request is described below). Postman Collection and environment files are available in the same directory
 
 -   Login Farmer (this request will login to the farmer application)
 -   Grow Batch (this request will create a ticket on ledger which means that the farmer has grown the batch which is ready to be picked by supplier)
