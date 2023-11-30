@@ -1,0 +1,711 @@
+{
+	"info": {
+		"_postman_id": "7e96c25d-8c29-470d-b772-500d6ea7c0d3",
+		"name": "Coffee Supply Chain - Hackathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register Farmer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Agro Farm\",\n    \"password\": \"Pass@12345\",\n    \"email\": \"agro.farms@farm.com\",\n    \"address\": \"Flat Number 402, Tulip Apartments, Street 4, Block B, Sri Ram Nagar, Kondapur\",\n    \"role\": \"FARMER\",\n    \"org\": \"farmer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{farmer_url}}/api/user/register",
+							"host": [
+								"{{farmer_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Farmer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.globals.set(\"farmer_jwt\", jsonData.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Agro Farm\",\n    \"password\": \"Pass@12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{farmer_url}}/api/user/login",
+							"host": [
+								"{{farmer_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Processor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Agro Processor\",\n    \"password\": \"Pass@12345\",\n    \"email\": \"agro.processor@agro.com\",\n    \"address\": \"Dispur, Assam\",\n    \"role\": \"PROCESSOR\",\n    \"org\": \"processor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{processor_url}}/api/user/register",
+							"host": [
+								"{{processor_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Processor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.globals.set(\"processor_jwt\", jsonData.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Agro Processor\",\n    \"password\": \"Pass@12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{processor_url}}/api/user/login",
+							"host": [
+								"{{processor_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Roaster",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Agro Roaster\",\n    \"password\": \"Pass@12345\",\n    \"email\": \"agro.roaster@agro.com\",\n    \"address\": \"Patna, Bihar\",\n    \"role\": \"ROASTER\",\n    \"org\": \"roaster\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{roaster_url}}/api/user/register",
+							"host": [
+								"{{roaster_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Roaster",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.globals.set(\"roaster_jwt\", jsonData.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Agro Roaster\",\n    \"password\": \"Pass@12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{roaster_url}}/api/user/login",
+							"host": [
+								"{{roaster_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Supplier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Agro Supplier\",\n    \"password\": \"Pass@12345\",\n    \"email\": \"agro.supplier@agro.com\",\n    \"address\": \"New Delhi\",\n    \"role\": \"SUPPLIER\",\n    \"org\": \"supplier\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{supplier_url}}/api/user/register",
+							"host": [
+								"{{supplier_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Supplier",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.globals.set(\"supplier_jwt\", jsonData.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Agro Supplier\",\n    \"password\": \"Pass@12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{supplier_url}}/api/user/login",
+							"host": [
+								"{{supplier_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Retailer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Agro Retailer\",\n    \"password\": \"Pass@12345\",\n    \"email\": \"agro.retailer@agro.com\",\n    \"address\": \"Mohan Lal Coffee\",\n    \"role\": \"RETAILER\",\n    \"org\": \"retailer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{retailer_url}}/api/user/register",
+							"host": [
+								"{{retailer_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Retailer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.globals.set(\"retailer_jwt\", jsonData.data.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Agro Retailer\",\n    \"password\": \"Pass@12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{retailer_url}}/api/user/login",
+							"host": [
+								"{{retailer_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Batch Operations",
+			"item": [
+				{
+					"name": "Grow Batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{farmer_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batchId\": \"a05B000000FQkfJIAT\",\n    \"batchStatus\": \"Open\",\n    \"seedType\": \"Arabic\",\n    \"plantationDate\": \"2023-04-01\",\n    \"farmerName\": \"a00B000000OgN7BIAV\",\n    \"growingChargePerKg\": 1000,\n    \"batchWeight\": 1,\n    \"batchPrice\": 1500,\n    \"batchSellDate\": \"2023-04-30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{farmer_url}}/api/batch/batch-grow",
+							"host": [
+								"{{farmer_url}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								"batch-grow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Farmer Batch Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{farmer_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{farmer_url}}/api/batch/get-batch/test",
+							"host": [
+								"{{farmer_url}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								"get-batch",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Process Batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{processor_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batchId\": \"a06B0000002Y46YIAS\",\n    \"batchStatus\": \"PROCESSED\",\n    \"processingType\": \"Grading\",\n    \"dateOfTransport\": \"2023-04-30\",\n    \"farmerName\": \"a00B000000OgN7BIAV\",\n    \"farmerBatchId\": \"a05B000000FQkfJIAT\",\n    \"batchPurchaseDate\": \"2023-04-30\",\n    \"batchPurchasePrice\": 2000,\n    \"batchPurchaseWeight\": 1,\n    \"batchProcessingDate\": \"2023-04-30\",\n    \"processorName\": \"a01B0000007hULTIA2\",\n    \"processorAddress\": \"Dispur, Assam\",\n    \"processorContact\": 7878787878,\n    \"processingChargePerKg\": 500,\n    \"processedBatchPrice\": 3000,\n    \"processedBatchWeight\": 1,\n    \"batchSellDate\": \"2023-04-30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{processor_url}}/api/batch/batch-process",
+							"host": [
+								"{{processor_url}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								"batch-process"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Processor Batch Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{processor_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{processor_url}}/api/batch/get-batch/test",
+							"host": [
+								"{{processor_url}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								"get-batch",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Roaster Batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{roaster_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batchId\": \"a08B000000KQan7IAD\",\n    \"batchStatus\": \"Open\",\n    \"roasingType\": \"American\",\n    \"dateOfTransport\": \"2023-05-01\",\n    \"processorName\": \"a01B0000007hULTIA2\",\n    \"processorBatchId\": \"a06B0000002Y46YIAS\",\n    \"batchPurchaseDate\": \"2023-04-30\",\n    \"batchPurchasePrice\": 3000,\n    \"batchPurchaseWeight\": 1,\n    \"roasterName\": \"a02B0000007oD6nIAE\",\n    \"roasterAddress\": \"Patna, Bihar\",\n    \"roasterContact\": 6767676767,\n    \"roastingTemperature\": 56,\n    \"roastingTime\": \"2\",\n    \"roastingChargePerKg\": 500,\n    \"roastedBatchPrice\": 3500,\n    \"roastedBatchWeight\": 1,\n    \"batchSellDate\": \"2023-05-02\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{roaster_url}}/api/batch/batch-roast",
+							"host": [
+								"{{roaster_url}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								"batch-roast"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Roaster Batch Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{roaster_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{roaster_url}}/api/batch/get-batch/test",
+							"host": [
+								"{{roaster_url}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								"get-batch",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supplier Batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{supplier_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batchId\": \"a08B000000KQan7IAD\",\n    \"batchStatus\": \"Open\",\n    \"dateOfTransport\": \"2023-04-30\",\n    \"roasterName\": \"a02B0000007oD6nIAE\",\n    \"roasterBatchId\": \"a08B000000KQan7IAD\",\n    \"batchPurchaseDate\": \"2023-05-02\",\n    \"batchPurchasePrice\": 4000,\n    \"batchPurchaseWeight\": 1,\n    \"supplierName\": \"a03B0000007WgFMIA0\",\n    \"supplierAddress\": \"New Delhi\",\n    \"supplierContact\": 9898989898,\n    \"packagingDate\": \"2023-06-07\",\n    \"packagingWeight\": 1,\n    \"packagingChargePerKg\": 300,\n    \"packagedBatchPrice\": 4500,\n    \"packagedBatchWeight\": 1,\n    \"shippingChargePerKg\": 0,\n    \"shippingBatchPrice\": 200,\n    \"batchSellDate\": \"2023-05-05\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{supplier_url}}/api/batch/batch-supply",
+							"host": [
+								"{{supplier_url}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								"batch-supply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Supplier Batch Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{supplier_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{supplier_url}}/api/batch/get-batch/test",
+							"host": [
+								"{{supplier_url}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								"get-batch",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retailer Batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{retailer_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batchId\": \"a09B00000092bjzIAA\",\n    \"batchStatus\": \"Open\",\n    \"dateOfShipping\": \"2023-05-02\",\n    \"supplierName\": \"a03B0000007WgFMIA0\",\n    \"supplierBatchId\": \"a08B000000KQan7IAD\",\n    \"batchPurchaseDate\": \"2023-04-30\",\n    \"batchPurchasePrice\": 5000,\n    \"batchPurchaseWeight\": 1,\n    \"retailerName\": \"a04B0000005gxAKIAY\",\n    \"retailerAddress\": \"Mohan Lal Coffee\",\n    \"retailerContact\": 7676746744,\n    \"grindType\": \"Manual\",\n    \"grindToBrewTime\": \"3\",\n    \"coffeeToWaterRatio\": 2,\n    \"brewType\": \"Nitro Cold\",\n    \"waterTemperatureBrewing\": \"45\",\n    \"brewTime\": \"5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{retailer_url}}/api/batch/batch-retail",
+							"host": [
+								"{{retailer_url}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								"batch-retail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Retailer Batch Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{retailer_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{retailer_url}}/api/batch/get-batch/test",
+							"host": [
+								"{{retailer_url}}"
+							],
+							"path": [
+								"api",
+								"batch",
+								"get-batch",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

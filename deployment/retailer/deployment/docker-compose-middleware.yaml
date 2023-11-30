@@ -1,0 +1,17 @@
+version: '3'
+services:
+    scylla-node1:
+        container_name: ${ORG_NAME}-scylla
+        image: scylladb/scylla:4.1.3
+        restart: always
+        command: --seeds=scylla-node1 --smp 1 --memory 500M --overprovisioned 1 --api-address 0.0.0.0
+        volumes:
+            - "./scylla/scylla.yaml:/etc/scylla/scylla.yaml"
+            - "./scylla/cassandra-rackdc.properties.dc1:/etc/scylla/cassandra-rackdc.properties"
+            - "../dbScripts:/dbScripts"
+        networks:
+            - app-network
+
+networks:
+  app-network:
+    driver: bridge
