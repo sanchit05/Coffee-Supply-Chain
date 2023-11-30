@@ -2,7 +2,9 @@
 A Coffee Supply Chain Management System built on Hyperledger Fabric
 
 # PreRequirements
-Install Docker and docker-compose follow the official documentation 
+-   Install Docker and docker-compose follow the official documentation 
+-   Configure your system for MiniFab from the official documentation using this link
+    https://github.com/hyperledger-labs/minifabric/blob/main/docs/README.md#prerequisites
 
 # Deploy Hyperledger fabric base network with channel and 5 orgs using minifab
 - cd chaincode/deployment
@@ -33,5 +35,6 @@ To Register and Enroll the users use /register api for the following organizatio
 -   Roaster Batch (this request will update the details for roasting type of coffee)
 -   Login Retailer (this request will login to the Retailer application)
 -   Retailer Batch (finally this request will update the details of Retailer will distribute it further for user consumption)
+
 
 
